@@ -6,6 +6,7 @@ const port = process.env.PORT || 8000;
 const passport = require('passport');
 
 const users = require('./routes/api/users');
+const hikes = require('./routes/hike/hikes')
 
 // Middleware
 app.use(cors());
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/users', users);
+app.use('/hike/hikes', hikes);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
